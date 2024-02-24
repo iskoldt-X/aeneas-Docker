@@ -12,14 +12,13 @@ RUN apt-get update && apt-get install -y \
     git file htop screen vim unzip \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install Python dependencies
-RUN pip3 --no-cache-dir install numpy boto3 requests tgt yt-dlp Pillow aeneas
+# Install Python dependencies, ensuring numpy is installed before aeneas
+RUN pip3 --no-cache-dir install numpy
+RUN pip3 --no-cache-dir install boto3 requests tgt yt-dlp Pillow
+RUN pip3 --no-cache-dir install aeneas
 
 # Setup working directory
 WORKDIR /app
 COPY ./ /app/
 
 ENV PYTHONIOENCODING=UTF-8
-
-# Command or entrypoint to run the application
-# CMD ["python3", "-m", "aeneas.tools.execute_task"]
