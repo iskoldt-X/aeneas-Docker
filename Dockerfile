@@ -8,11 +8,8 @@ RUN apt-get update && apt-get install -y \
     flac libasound2-dev libsndfile1-dev vorbis-tools \
     libxml2-dev libxslt-dev zlib1g-dev \
     git file htop screen vim unzip \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# Install additional Python dependencies, excluding numpy
-RUN pip3 --no-cache-dir install boto3 requests tgt yt-dlp Pillow
-RUN pip3 --no-cache-dir install aeneas
+    && apt-get clean && rm -rf /var/lib/apt/lists/* \
+    && pip3 --no-cache-dir install boto3 requests tgt yt-dlp Pillow aeneas
 
 # Setup working directory
 WORKDIR /app
