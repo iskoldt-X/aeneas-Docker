@@ -29,8 +29,6 @@ docker run --rm iskoldt/aeneas:latest python3 -m aeneas.tools.execute_job
 
 To synchronize your audio file with the corresponding text, you can use the `execute_task` command. Make sure to mount the directory containing your audio and text files into the container using the `-v` option. Here's an example:
 
-You can also get a list of live examples that you can immediately run on your machine thanks to the included files:
-
 ```bash
 docker run --rm -v $(pwd):/app iskoldt/aeneas:latest python3 -m aeneas.tools.execute_task \
   /app/test.mp3 \
