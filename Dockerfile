@@ -1,6 +1,5 @@
 FROM iskoldt/numpy:latest
 
-# Install additional system dependencies
 RUN apt-get update && apt-get install -y \
     ffmpeg \
     espeak espeak-data libespeak1 libespeak-dev \
