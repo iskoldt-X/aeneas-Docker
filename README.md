@@ -40,10 +40,11 @@ docker run --rm -v $(pwd):/app iskoldt/aeneas:latest python3 -m aeneas.tools.exe
 ```
 In this command:
 
-`--rm` automatically removes the container when it exits.
-`-v $(pwd):/app` mounts the current directory (`$(pwd)`) to `/app` in the container, allowing the container to access the files.
-`iskoldt/aeneas:latest` specifies the Docker image to use.
-The arguments after `iskoldt/aeneas:latest` are passed to the `python3 -m aeneas.tools.execute_task` command inside the container, specifying the audio file (`test.mp3`), the text file (`test1.txt`), the task configuration, and the output file (`map.json`).
+- `--rm` automatically removes the container when it exits.
+- `-v $(pwd):/app` mounts the current directory (`$(pwd)`) to `/app` in the container, allowing the container to access the files.
+- `iskoldt/aeneas:latest` specifies the Docker image to use.
+- The arguments after `iskoldt/aeneas:latest` are passed to the `python3 -m aeneas.tools.execute_task` command inside the container, specifying the audio file (`test.mp3`), the text file (`test1.txt`), the task configuration, and the output file (`map.json`).
+
 
 ## Note
 
